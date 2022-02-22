@@ -7,9 +7,20 @@
 \usepackage[russian]{babel}
 \title{Отчет по лабораторной работе №1}
 \author{Ивлев А.Е Б19-511}
+\usepackage{graphicx}
+\graphicspath{{/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.eps}
 \begin{document}
 	\maketitle
 	
+	\begin{figure}[h]
+		\centering
+		{\includegraphics[scale=0.3]{phase_portrait, mu=1, alpha=1}}
+		{\includegraphics[scale=0.3]{phase_portrait, mu=1, alpha=0.5}}
+		\caption{Фазовые портреты при $\mu = 1$, $\alpha = 1$; $\mu = 1$, $\alpha = 0.5$}
+		\label{image/1}
+	\end{figure}
+
 	Исходная динамическая система:
 	
 	\begin{equation}
@@ -49,7 +60,24 @@
 	Собственные значения матрицы Якоби:
 	\begin{equation}
 		\label{math/5}
-		\lambda_{1,2} = \frac{-\mu \pm \sqrt{\mu^{2} - 4\alpha}}{2}
+		\lambda_{1,2} = \frac{-\mu \pm \sqrt{\mu^{2} - 4\alpha}}{2}.
+	\end{equation}
+	
+	Подбирая различные значения параметров, можно получить самые разные поведения системы. Рассмотрим случай $\alpha = 1$, $\mu = 1$. В таком случае собственные значения (\ref{math/5}) становятся комплексными, при этом их действительная часть меньше нуля.
+	\begin{equation}
+		\label{math/6}
+		\lambda_{1,2} = -\frac{1}{2} \pm i \frac{\sqrt{3}}{2}.
+	\end{equation}
+	
+	Следовательно можно сделать вывод о том, что фазовый портрет вблизи точки покоя представляет собой устойчивый фокус. Эти выводы подтверждаются численным построением фазового портрета в системе Maple (Рис.\ref{image/1}).
+	
+	Подобное поведение можно получить и при других значениях параметров $\mu$ и $\alpha$. Условия на параметры можно получить из (\ref{math/5}). Нужно потребовать, чтобы выражение под корней было отрицательным, а действительная часть была меньше нуля, то есть:
+	\begin{equation}
+		\label{math/7}
+		\begin{cases}
+			\alpha > \mu^2/4,  \\
+			\mu > 0.
+		\end{cases}
 	\end{equation}
 	
 	
