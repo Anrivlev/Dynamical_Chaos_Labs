@@ -1,0 +1,56 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[russian]{babel}
+\title{Отчет по лабораторной работе №1}
+\author{Ивлев А.Е Б19-511}
+\begin{document}
+	\maketitle
+	
+	Исходная динамическая система:
+	
+	\begin{equation}
+		\label{math/1}
+		\ddot{x} + \mu \dot{x} + \alpha (\exp(x) - 1) = 0.	
+	\end{equation}
+	
+	Она же в каноническом виде:
+	\begin{equation}
+		\label{math/2}
+		\begin{cases}
+			\dot{x} = y, \\
+			\dot{y} = -\mu y - \alpha (\exp(x) - 1).
+		\end{cases}
+	\end{equation}
+
+	Приравнивая правые части уравнения к нулю, находим точки покоя:
+	\begin{equation}
+		\label{math/3}
+		\begin{cases}
+			\ y = 0, \\
+			\ -\mu y - \alpha (\exp(x) - 1) = 0.
+		\end{cases}
+	\end{equation}
+	
+	Единственная точка покоя - точка $(0;0)$.
+	
+	Матрица Якоби системы (\ref{math/1}) в точке покоя:
+	\begin{equation}
+		\label{math/4}
+		\begin{bmatrix}
+			0& 1\\
+			-\alpha& -\mu
+		\end{bmatrix}
+	\end{equation}
+	
+	Собственные значения матрицы Якоби:
+	\begin{equation}
+		\label{math/5}
+		\lambda_{1,2} = \frac{-\mu \pm \sqrt{\mu^{2} - 4\alpha}}{2}
+	\end{equation}
+	
+	
+\end{document}
